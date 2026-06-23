@@ -1,16 +1,14 @@
-# claude-agent-fleet
+# claude-agent-fleet — Production Claude Code subagents
 
-> A production-grade fleet of 24 Claude Code subagents — independent reviewers, debuggers, implementers, and infra auditors — built and battle-tested across a multi-repo production environment. Used in production, not toys.
-
-<div align="center">
-
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/anatolykoptev/claude-agent-fleet)](https://github.com/anatolykoptev/claude-agent-fleet/commits/main)
-[![Subagents](https://img.shields.io/badge/subagents-24-green)](agents/)
-[![Skills](https://img.shields.io/badge/skills-2-purple)](skills/)
+![Subagents](https://img.shields.io/badge/subagents-24-green)
+![Skills](https://img.shields.io/badge/skills-2-purple)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
-</div>
+> A fleet of 24 role-specialized Claude Code subagents — reviewers, debuggers, implementers, infra auditors — built and battle-tested across a multi-repo production stack.
+
+Part of the [Krolik](https://krolik.tools) fleet of open-source AI-infrastructure projects.
 
 ---
 
@@ -155,6 +153,15 @@ cp -r agents/* ~/.claude/agents/
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit new agents.
+
+## Part of the Krolik fleet
+
+These agents build and operate a wider set of open-source AI-infrastructure projects:
+
+- [go-code](https://krolik.tools) — code-intelligence MCP for AI agents: semantic search, call graphs, dataflow, PR review across 16 languages
+- [MemDB](https://memdb.ai) — self-hosted long-term memory database for AI agents
+- [dozor](https://github.com/anatolykoptev/dozor) — AI-first server monitoring via MCP
+- [go-mcpserver](https://github.com/anatolykoptev/go-mcpserver) — bootstrap library for Go MCP servers
 
 ## License
 
