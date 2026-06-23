@@ -116,7 +116,7 @@ cp -r agents/* ~/.claude/agents/
 
 | Plugin | Description |
 |---|---|
-| **go-tools** | Code-intelligence MCP integration: semantic search, call traces, impact analysis, dead code, duplicate detection, repo analysis. |
+| **go-tools** | go-code MCP integration: semantic search, call traces, impact analysis, dead code, duplicate detection, repo analysis. |
 | **startup-pressure-pro** | Startup idea validation: pressure-test with adversarial critique, market sizing, competitor analysis. |
 | **claude-code-memdb** | Persistent memory across sessions using a local vector DB. Store and retrieve project-specific knowledge. |
 | **local-marketplace** | Browse and install agents from the fleet without internet access. |
@@ -145,7 +145,7 @@ cp -r agents/* ~/.claude/agents/
 
               ── BEFORE ANY PR ──
 
- code-intelligence MCP: prepare_change → review_delta → suggest_reviewers
+ go-code: prepare_change → review_delta → suggest_reviewers
 ```
 
 ---
@@ -158,7 +158,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit new agents.
 
 These agents build and operate a wider set of open-source AI-infrastructure projects:
 
-- [go-code](https://krolik.tools) — code-intelligence MCP for AI agents: semantic search, call graphs, dataflow, PR review across 16 languages
+- [go-code](https://krolik.tools) — code intelligence MCP for AI agents: semantic search, call graphs, dataflow, PR review across 16 languages
 - [MemDB](https://memdb.ai) — self-hosted long-term memory database for AI agents
 - [dozor](https://github.com/anatolykoptev/dozor) — AI-first server monitoring via MCP
 - [go-mcpserver](https://github.com/anatolykoptev/go-mcpserver) — bootstrap library for Go MCP servers

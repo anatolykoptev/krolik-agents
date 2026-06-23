@@ -93,7 +93,7 @@ Hypothesis-first without metrics = wasted rounds.
 
 ### 2. Map blast radius
 
-> **Stale index** — code-intelligence MCP output contradicts the live tree (phantom-deleted files, missing new symbols, `stat: no such file`)? → refresh the index, re-query before trusting delta/dead-code.
+> **Stale index** — go-code output contradicts the live tree (phantom-deleted files, missing new symbols, `stat: no such file`)? → refresh the index (`mcp__go-code__code_graph refresh=true`), re-query before trusting delta/dead-code.
 
 - Each file modified → impact_analysis. Every caller diff might break.
 - Each new symbol → understand + semantic_search. Duplicate primitives = smell.
@@ -290,21 +290,21 @@ Apply when diff touches auth / session / routing / HTML output / server-side fet
 
 ### 6. Code intelligence — primary tool
 
-For non-trivial diff, use your code-intelligence MCP (whatever that is in your deployment):
-- `understand <symbol>` — call graph, complexity, prior learnings.
-- `impact_analysis <file_or_symbol>` — every caller, blast radius.
-- `code_search` — exact identifier sweep.
-- `semantic_search` — meaning-based (mandatory, see §2).
-- `dataflow_analyze` — tainted/sensitive value flow.
-- `dead_code` — diff leave previously-used code dead?
-- `code_health` — complexity / coupling delta.
-- `call_trace` — for new functions, where actually run.
-- `review_delta` (base = main) / `review_pr` — full delta with live graph.
-- `get_file_health <repo> [paths]` — 1-10 score per file via prior_defect (Kim bug-cache: 180d fix-commits count) + churn_risk. Score ≥7 = real defect history. **Use BEFORE flagging "low-risk refactor".**
-- `suggest_reviewers <repo> <paths>` — rank authorship + co-change + recency for PR file list.
-- `federated_cochange` — files in OTHER repos that co-change with the diff's files.
+For non-trivial diff, use go-code (`mcp__go-code__*`):
+- `mcp__go-code__understand <symbol>` — call graph, complexity, prior learnings.
+- `mcp__go-code__impact_analysis <file_or_symbol>` — every caller, blast radius.
+- `mcp__go-code__code_search` — exact identifier sweep.
+- `mcp__go-code__semantic_search` — meaning-based (mandatory, see §2).
+- `mcp__go-code__dataflow_analyze` — tainted/sensitive value flow.
+- `mcp__go-code__dead_code` — diff leave previously-used code dead?
+- `mcp__go-code__code_health` — complexity / coupling delta.
+- `mcp__go-code__call_trace` — for new functions, where actually run.
+- `mcp__go-code__review_delta` (base = main) / `mcp__go-code__review_pr` — full delta with live graph.
+- `mcp__go-code__get_file_health <repo> [paths]` — 1-10 score per file via prior_defect (Kim bug-cache: 180d fix-commits count) + churn_risk. Score ≥7 = real defect history. **Use BEFORE flagging "low-risk refactor".**
+- `mcp__go-code__suggest_reviewers <repo> <paths>` — rank authorship + co-change + recency for PR file list.
+- `mcp__go-code__federated_cochange` — files in OTHER repos that co-change with the diff's files.
 
-**Context probe (MANDATORY).** When controller points at specific file/symbol, one code-intelligence call BEFORE `cat`/`Read`.
+**Context probe (MANDATORY).** When controller points at specific file/symbol, one go-code call BEFORE `cat`/`Read`.
 
 **Risk probe (MANDATORY for diffs ≥3 files).** `get_file_health` on the changed paths BEFORE writing findings.
 

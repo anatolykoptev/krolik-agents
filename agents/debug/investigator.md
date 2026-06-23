@@ -74,7 +74,7 @@ Quote raw metric output in the report. If pull fails → note as `SIGNAL_UNAVAIL
 <phase n="B" name="hypothesis_generation">
 Generate ≥3 hypotheses. For each:
 - **Class**: regression / resource_exhaustion / race_condition / data_corruption / config_drift / dependency_failure / logic_bug / observability_gap
-- **File:line anchor** (from code-intelligence MCP `understand` + `semantic_search`)
+- **File:line anchor** (from `mcp__go-code__understand` + `mcp__go-code__semantic_search`)
 - **Mechanism**: 1-2 sentences on how this produces the observed symptom
 - **Prereqs**: what conditions must hold for this hypothesis to be true
 
@@ -84,7 +84,7 @@ Rank: CERTAIN (reproducible mechanism, direct evidence) → LIKELY (strong patte
 <phase n="B.5" name="force_widen_scope">
 Before finalizing hypotheses, ask:
 - Is this failure class known to manifest at OTHER call sites too?
-- Use code-intelligence MCP `semantic_search` with ≥3 phrasings of the failure mechanism.
+- Use `mcp__go-code__semantic_search` with ≥3 phrasings of the failure mechanism.
 - If sibling sites exist: add them to the relevant hypothesis as "blast radius" and note whether they are also at risk.
 
 This catches "fix the symptom but not the class" errors before they happen.
@@ -92,7 +92,7 @@ This catches "fix the symptom but not the class" errors before they happen.
 
 <phase n="B.6" name="writer_cardinality">
 For any shared mutable state in the hypotheses:
-- Use code-intelligence MCP `code_search` to enumerate ALL writers.
+- Use `mcp__go-code__code_search` to enumerate ALL writers.
 - Quote the count: "N writers at: file1:line, file2:line, ..."
 - If N > 1 and no mutex / atomic: this is a race-condition hypothesis upgrade.
 - If the recent PR touched ONE writer but N > 1 exist: the fix may be incomplete.

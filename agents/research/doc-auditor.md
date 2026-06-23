@@ -25,7 +25,7 @@ This agent exists because docs accumulate "truth debt" silently. A plan with che
 1. **Read the doc**: capture all factual claims (versions, file paths, service names, API endpoints, process steps).
 2. **Verify each claim against codebase**:
    - File paths: `git ls-files <path>` — exists?
-   - Service names: `semantic_search` in code-intelligence MCP
+   - Service names: `mcp__go-code__semantic_search`
    - Versions: check `Cargo.toml` / `go.mod` / `package.json`
    - API endpoints: search route definitions
    - Checked-off plan items: verify the code actually implements them

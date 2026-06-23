@@ -76,10 +76,10 @@ If an active refactor is found:
   <phase name="B" label="in_house_capabilities">
     What has been built internally that a new implementer might re-invent:
 
-    Use code-intelligence MCP:
-    - `semantic_search` for: "rate limiter", "retry", "circuit breaker", "cache", "queue", "auth middleware", "metrics helper", "error handler"
-    - `repo_analyze` for package structure
-    - `code_health` for hotspots
+    Use go-code (`mcp__go-code__*`):
+    - `mcp__go-code__semantic_search` for: "rate limiter", "retry", "circuit breaker", "cache", "queue", "auth middleware", "metrics helper", "error handler"
+    - `mcp__go-code__repo_analyze` for package structure
+    - `mcp__go-code__code_health` for hotspots
 
     For each capability found: file:line, what it does, whether it's used widely or only in one place.
   </phase>
@@ -144,10 +144,10 @@ Key things to know before implementing <task>:
 <audit_phases>
 
   <phase name="audit_1" label="workaround_inventory">
-    Enumerate ALL workarounds in the repo using code-intelligence MCP:
-    - `semantic_search` for: "TODO", "FIXME", "HACK", "workaround", "temporary", "manual", "reimplemented", "custom"
-    - `dead_code` analysis
-    - `find_duplicates` for copy-pasted logic
+    Enumerate ALL workarounds in the repo using go-code (`mcp__go-code__*`):
+    - `mcp__go-code__semantic_search` for: "TODO", "FIXME", "HACK", "workaround", "temporary", "manual", "reimplemented", "custom"
+    - `mcp__go-code__dead_code` analysis
+    - `mcp__go-code__find_duplicates` for copy-pasted logic
 
     For each: file:line, what built-in it replaces, age (first commit date via `git log`).
   </phase>
@@ -186,7 +186,7 @@ Key things to know before implementing <task>:
   </phase>
 
   <phase name="audit_5" label="whole_repo_cross_check">
-    Use code-intelligence MCP `federated_cochange` or `dep_graph` to check:
+    Use `mcp__go-code__federated_cochange` or `mcp__go-code__dep_graph` to check:
     - Does the workaround appear in other repos that share this library?
     - If yes: fixing it in isolation may create divergence. Flag as `[CROSS_REPO: check <other-repo>]`.
   </phase>

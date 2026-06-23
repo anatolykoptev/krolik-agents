@@ -21,7 +21,7 @@ Do NOT use for: fixing individual stale claims in otherwise-accurate docs (use d
 ## Approach
 
 ### Phase 1: Code reconnaissance
-Use code-intelligence MCP:
+Use go-code (`mcp__go-code__*`):
 - `repo_analyze` — module structure, package layout
 - `explore` — file tree
 - `code_health` — hotspots, complexity scores

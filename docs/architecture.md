@@ -144,7 +144,7 @@ Phase discipline is what makes parallel dispatch safe. A reviewer reading a diff
   ┌──────────────────────────────────────────────────────────────┐
   │                   BEFORE ANY PR OPEN                         │
   │                                                              │
-  │  code-intelligence MCP:                                      │
+  │  go-code:                                                     │
   │    prepare_change → review_delta → suggest_reviewers         │
   └──────────────────────────────────────────────────────────────┘
 ```

@@ -47,7 +47,7 @@ Mode 1 (competitor recon) doesn't read OWN code → skip this phase.
 
 ## Phase 1: Tool discovery (ToolSearch)
 
-Load your code-intelligence MCP tools (`mcp__go-code__explore`, `repo_search`, `repo_analyze`, `code_research`, `understand`, `code_search`, `semantic_search`, `symbol_search`, `file_parse`, `code_compare`, `dataflow_analyze`, `call_trace`, `code_graph`, `dep_graph`, `code_health`, `dead_code`, `impact_analysis`, `federated_cochange`, `remember_graph_insights`) plus your web-research MCP's tools (deep-research, GitHub code search, HN search, URL reader, web search) via ToolSearch before calling them.
+Load go-code tools via ToolSearch before calling them: `mcp__go-code__explore`, `mcp__go-code__repo_search`, `mcp__go-code__repo_analyze`, `mcp__go-code__code_research`, `mcp__go-code__understand`, `mcp__go-code__code_search`, `mcp__go-code__semantic_search`, `mcp__go-code__symbol_search`, `mcp__go-code__file_parse`, `mcp__go-code__code_compare`, `mcp__go-code__dataflow_analyze`, `mcp__go-code__call_trace`, `mcp__go-code__code_graph`, `mcp__go-code__dep_graph`, `mcp__go-code__code_health`, `mcp__go-code__dead_code`, `mcp__go-code__impact_analysis`, `mcp__go-code__federated_cochange`, `mcp__go-code__remember_graph_insights`. Also load your web-research MCP's tools (deep-research, GitHub code search, HN search, URL reader, web search) via ToolSearch.
 
 If the controller's environment has additional `wp_*`, `hf_*`, or `site_*` tools available, load them when the mode obviously needs them (Mode 1 marketing-page crawl → `site_analyze`; Mode 3 ML-kernel research → an HF model-search tool).
 

@@ -39,7 +39,7 @@ color: purple
 <tools>
   | Purpose | Tool |
   |---|---|
-  | Code understanding | code-intelligence MCP: understand, semantic_search, code_search, impact_analysis, dataflow_analyze, call_trace |
+  | Code understanding | go-code: `mcp__go-code__understand`, `semantic_search`, `code_search`, `impact_analysis`, `dataflow_analyze`, `call_trace` |
   | Live metrics | monitoring MCP metric-pull OR `curl /metrics` |
   | Browser/UI capture | browser automation MCP: chrome_session, chrome_interact, chrome_events |
   | Git operations | git, gh CLI |
@@ -80,7 +80,7 @@ STOP condition: ground truth captured, baseline recorded.
 </phase>
 
 <phase n="2" name="hypothesis_generation">
-Generate ≥3 hypotheses via code-intelligence MCP:
+Generate ≥3 hypotheses via go-code (`mcp__go-code__*`):
 - `semantic_search` ≥5 phrasings of the failure mechanism
 - `understand <symbol>` on the affected path
 - `call_trace` from entry point to failure site
@@ -103,7 +103,7 @@ Fix ONLY the root cause identified in Phase 2. Single-focus per PR.
 
 Pre-fix checklist:
 - `impact_analysis` on the file to be changed — blast radius known?
-- `prepare_change` via code-intelligence MCP — dead code introduced?
+- `mcp__go-code__prepare_change` — dead code introduced?
 - Writer cardinality confirmed — fixing all N sites?
 
 Fix discipline:

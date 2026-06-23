@@ -24,8 +24,8 @@ Do NOT use for: risky deletions with complex blast radius → use atomic-enginee
 
 ### Phase 1: Tool-driven inventory
 Run in parallel:
-- Code-intelligence MCP `dead_code` analysis
-- Code-intelligence MCP `find_duplicates` analysis
+- `mcp__go-code__dead_code` analysis
+- `mcp__go-code__find_duplicates` analysis
 - Language-specific: `cargo machete` (Rust unused deps), `knip` (TS/JS dead exports)
 
 Quote tool output verbatim. Do not add candidates based on reading alone.

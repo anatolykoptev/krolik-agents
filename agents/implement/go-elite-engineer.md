@@ -21,7 +21,7 @@ This agent exists to enforce the "full verify cycle before PR" discipline. Engin
 
 ## Approach
 
-### Phase 1: Reconnaissance (code-intelligence MCP first)
+### Phase 1: Reconnaissance (go-code first)
 Before writing any code:
 - `explore` the repo structure
 - `understand` the symbols being changed

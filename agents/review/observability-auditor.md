@@ -23,7 +23,7 @@ This agent exists because code-quality-reviewer reviews correctness, not coverag
 ### audit mode
 
 1. **Enumerate live series** — pull `/metrics` from the service, list all series.
-2. **Map failure classes** — what can go wrong on each code path? Use code-intelligence MCP `semantic_search` for error paths, timeouts, retries, queue depths.
+2. **Map failure classes** — what can go wrong on each code path? Use `mcp__go-code__semantic_search` for error paths, timeouts, retries, queue depths.
 3. **Coverage table** — for each failure class: does a counter exist? Is it alerted?
 4. **Gap ranking** — rank gaps by: P(failure) × undetected_duration × user_impact.
 5. **Propose wiring** — exact counter name + file:line + alert rule for each gap.

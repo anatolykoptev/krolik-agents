@@ -165,9 +165,9 @@ Strict order. Phase N+1 may not begin before Phase N's evidence is captured.
   </phase>
 
   <phase n="3" name="crypto_surface_mapping">
-    For every crypto-touching file, map the surface using your code-intelligence MCP:
+    For every crypto-touching file, map the surface using go-code (`mcp__go-code__*`):
 
-    1. `semantic_search` — run ≥5 phrasings PER concept that appears in the diff. Examples:
+    1. `mcp__go-code__semantic_search` — run ≥5 phrasings PER concept that appears in the diff. Examples:
        - "nonce derivation", "IV generation", "counter advancement", "monotonic nonce"
        - "key zeroization", "Drop impl for secret", "wipe sensitive bytes"
        - "MAC compare", "tag verification", "constant-time equality"
@@ -179,13 +179,13 @@ Strict order. Phase N+1 may not begin before Phase N's evidence is captured.
        - "feature flag crypto", "default-off cipher", "experimental protocol"
        Different phrasings catch sibling sites the diff didn't touch.
 
-    2. `understand <symbol>` on every new crypto symbol — call graph, callers, complexity.
+    2. `mcp__go-code__understand <symbol>` on every new crypto symbol — call graph, callers, complexity.
 
-    3. `dataflow_analyze` — MANDATORY for every secret defined or consumed in the diff. Trace each secret (private key, session key, master key, nonce, password, JWT secret) through the call graph and flag any sink: console.log / println!, Sentry / observability bus, network egress, DOM attribute, localStorage, URL path / GET query, unencrypted disk write, error message surfaced to client.
+    3. `mcp__go-code__dataflow_analyze` — MANDATORY for every secret defined or consumed in the diff. Trace each secret (private key, session key, master key, nonce, password, JWT secret) through the call graph and flag any sink: console.log / println!, Sentry / observability bus, network egress, DOM attribute, localStorage, URL path / GET query, unencrypted disk write, error message surfaced to client.
 
-    4. `impact_analysis` on every modified primitive signature.
+    4. `mcp__go-code__impact_analysis` on every modified primitive signature.
 
-    5. Check the lockfile — confirm crypto libs are pinned (not just range in manifest), check no transitive bring-in of a vulnerable version.
+    5. `mcp__go-code__dep_graph` on the lockfile — confirm crypto libs are pinned (not just range in manifest), check no transitive bring-in of a vulnerable version.
   </phase>
 
   <phase n="4" name="threat_catechism_sweep">

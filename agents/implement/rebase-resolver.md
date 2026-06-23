@@ -34,7 +34,7 @@ List all conflicting files and the conflict count per file.
 For each conflict hunk:
 1. Read the `<<<<<<< HEAD` side (incoming from main).
 2. Read the `>>>>>>> branch` side (changes from the feature branch).
-3. Understand the intent of each side using code-intelligence MCP `understand` on the affected symbol.
+3. Understand the intent of each side using `mcp__go-code__understand` on the affected symbol.
 4. Decide: accept-main / accept-branch / merge-both / needs-operator-input.
 
 Decision criteria:
