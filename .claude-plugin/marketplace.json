@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-agent-fleet",
+  "name": "krolik-agents",
   "description": "Production-grade fleet of 24 Claude Code subagents: reviewers, debuggers, implementers, infra auditors",
   "owner": {
     "name": "Anatoly Koptev",
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "claude-agent-fleet",
+      "name": "krolik-agents",
       "description": "24 role-specialized subagents for code review, debugging, implementation, and infrastructure auditing",
       "author": {
         "name": "Anatoly Koptev",

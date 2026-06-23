@@ -1,4 +1,4 @@
-# claude-agent-fleet conventions
+# krolik-agents conventions
 
 All agents in `agents/` use YAML frontmatter: `name`, `model`, `description`. Optional: `color`, `disallowedTools`, `effort`.
 

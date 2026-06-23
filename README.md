@@ -1,7 +1,7 @@
-# claude-agent-fleet — Production Claude Code subagents
+# krolik-agents — Production Claude Code subagents
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Last commit](https://img.shields.io/github/last-commit/anatolykoptev/claude-agent-fleet)](https://github.com/anatolykoptev/claude-agent-fleet/commits/main)
+[![Last commit](https://img.shields.io/github/last-commit/anatolykoptev/krolik-agents)](https://github.com/anatolykoptev/krolik-agents/commits/main)
 ![Subagents](https://img.shields.io/badge/subagents-24-green)
 ![Skills](https://img.shields.io/badge/skills-2-purple)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
@@ -30,8 +30,8 @@ The fleet was built and is actively used against a multi-service production stac
 
 ```bash
 # Option A: Claude Code marketplace
-/plugin marketplace add anatolykoptev/claude-agent-fleet
-/plugin install claude-agent-fleet
+/plugin marketplace add anatolykoptev/krolik-agents
+/plugin install krolik-agents
 
 # Option B: manual install
 cp -r agents/* ~/.claude/agents/
