@@ -46,7 +46,7 @@ cp -r agents/* ~/.claude/agents/
 | Subagents | 24 | Role-specialized Claude Code agents |
 | Skills | 2 | llm-council, postgres |
 | Plugins | 4 | go-tools, startup-pressure-pro, claude-code-memdb, local-marketplace |
-| Full prompts | 5 | code-quality-reviewer, crypto-security-reviewer, investigator, atomic-engineer, infrastructure-auditor |
+| Full prompts | 8 | code-quality-reviewer, crypto-security-reviewer, investigator, atomic-engineer, infrastructure-auditor, code-research, prompt-master, architect |
 
 ---
 
