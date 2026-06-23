@@ -33,6 +33,7 @@ The fleet was built and is actively used against a multi-service production stac
 ```bash
 # Option A: Claude Code marketplace
 /plugin marketplace add anatolykoptev/claude-agent-fleet
+/plugin install claude-agent-fleet
 
 # Option B: manual install
 cp -r agents/* ~/.claude/agents/
@@ -57,50 +58,50 @@ cp -r agents/* ~/.claude/agents/
 
 | Agent | Description | Model |
 |---|---|---|
-| **code-quality-reviewer** | Independent, anti-sycophancy multi-stage review with OWASP quick-scan. CRITICAL/HIGH/MEDIUM/LOW findings with file:line citations. | `opus` |
-| **crypto-security-reviewer** | 12-class adversarial crypto catechism: confidentiality, integrity, authenticity, transcript binding, forward secrecy, replay, downgrade, KCI/UKS, side channels, key handling, library misuse, language pitfalls. Live pentesting probes. | `opus` |
-| **spec-reviewer** | Binary spec-compliance gate before code-quality review. PASS/FAIL/DEVIATION_ACCEPTABLE. | `sonnet` |
-| **empirical-reviewer** | Post-deploy runtime verification: counters, endpoints, env gates. Distinguishes NO_TRAFFIC from WIRING_BROKEN. | `sonnet` |
-| **observability-auditor** | Silent-failure coverage gap finder. Two modes: audit (find blind spots) and design (instrument a new path). Proposes exact counter + alert rule. | `sonnet` |
-| **design-quality-reviewer** | Independent UX/visual review against DESIGN.md tokens. Nielsen heuristics, WCAG 2.1 AA, cognitive load. Hard gate on missing DESIGN.md. | `sonnet` |
-| **design-empirical-reviewer** | Post-deploy Lighthouse + axe-core + screenshot visual verification at 3 viewports. Catches CSP-broken styles, FOIT, broken LCP elements. | `opus` |
+| [**code-quality-reviewer**](agents/review/code-quality-reviewer.md) | Independent, anti-sycophancy multi-stage review with OWASP quick-scan. CRITICAL/HIGH/MEDIUM/LOW findings with file:line citations. | `opus` |
+| [**crypto-security-reviewer**](agents/review/crypto-security-reviewer.md) | 12-class adversarial crypto catechism: confidentiality, integrity, authenticity, transcript binding, forward secrecy, replay, downgrade, KCI/UKS, side channels, key handling, library misuse, language pitfalls. Live pentesting probes. | `opus` |
+| [**spec-reviewer**](agents/review/spec-reviewer.md) | Binary spec-compliance gate before code-quality review. PASS/FAIL/DEVIATION_ACCEPTABLE. | `sonnet` |
+| [**empirical-reviewer**](agents/review/empirical-reviewer.md) | Post-deploy runtime verification: counters, endpoints, env gates. Distinguishes NO_TRAFFIC from WIRING_BROKEN. | `sonnet` |
+| [**observability-auditor**](agents/review/observability-auditor.md) | Silent-failure coverage gap finder. Two modes: audit (find blind spots) and design (instrument a new path). Proposes exact counter + alert rule. | `sonnet` |
+| [**design-quality-reviewer**](agents/review/design-quality-reviewer.md) | Independent UX/visual review against DESIGN.md tokens. Nielsen heuristics, WCAG 2.1 AA, cognitive load. Hard gate on missing DESIGN.md. | `sonnet` |
+| [**design-empirical-reviewer**](agents/review/design-empirical-reviewer.md) | Post-deploy Lighthouse + axe-core + screenshot visual verification at 3 viewports. Catches CSP-broken styles, FOIT, broken LCP elements. | `opus` |
 
 ### Debug & Diagnostics
 
 | Agent | Description | Model |
 |---|---|---|
-| **investigator** | Live evidence → ranked hypotheses (CERTAIN/LIKELY/POSSIBLE/UNVERIFIED) → file:line fix proposals. Metrics-first discipline. CoVe verification. Never patches. | `opus` |
-| **atomic-engineer** | Multi-PR fix arc: empirical capture → diagnose → targeted fix → TDD verify → observability close → independent review → PR. 12 inviolable axioms. | `opus` |
-| **deep-fix** | Single-dispatch hard-bug fixer: abbreviated diagnosis + RED test + patch + pre-mortem + observability + PR. Use when evidence is rich and you want execution without serial handoffs. | `opus` |
-| **build-error-resolver** | Minimal-diff build/type error resolution across Rust, Go, TypeScript. Classifies error type, applies minimal fix, verifies build, reports NEEDS_REFACTOR when scope exceeds its mandate. | `opus` |
+| [**investigator**](agents/debug/investigator.md) | Live evidence → ranked hypotheses (CERTAIN/LIKELY/POSSIBLE/UNVERIFIED) → file:line fix proposals. Metrics-first discipline. CoVe verification. Never patches. | `opus` |
+| [**atomic-engineer**](agents/debug/atomic-engineer.md) | Multi-PR fix arc: empirical capture → diagnose → targeted fix → TDD verify → observability close → independent review → PR. 12 inviolable axioms. | `opus` |
+| [**deep-fix**](agents/debug/deep-fix.md) | Single-dispatch hard-bug fixer: abbreviated diagnosis + RED test + patch + pre-mortem + observability + PR. Use when evidence is rich and you want execution without serial handoffs. | `opus` |
+| [**build-error-resolver**](agents/debug/build-error-resolver.md) | Minimal-diff build/type error resolution across Rust, Go, TypeScript. Classifies error type, applies minimal fix, verifies build, reports NEEDS_REFACTOR when scope exceeds its mandate. | `opus` |
 
 ### Implementation
 
 | Agent | Description | Model |
 |---|---|---|
-| **architect** | System design with constraint capture, reversibility tags, pre-mortem, and phased plan with STOP conditions. Subsystem-tier+ decisions. | `opus` |
-| **go-elite-engineer** | FAANG-grade implementation: Go, Rust, TypeScript, Svelte, Python, shell, SQL, Dockerfile. Correct idioms, existing style matched, full verify cycle, PR. | `sonnet` |
-| **tdd-implementer** | Plan-task executor: RED → GREEN → REFACTOR → commit. One task at a time. STOPS at commit. | `sonnet` |
-| **rebase-resolver** | Conflict-by-conflict rebase preserving intent from both sides. Per-hunk decisions with intent reasoning. Never wholesale "theirs" or "ours". | `sonnet` |
-| **refactor-cleaner** | Evidence-based dead code and duplicate removal using code-intelligence tools. Blast-radius check via impact_analysis before every deletion. | `opus` |
-| **wip-curator** | WIP archaeology: triage dirty checkouts, stash piles, orphaned worktrees. Ship/discard/split decisions. | `sonnet` |
+| [**architect**](agents/implement/architect.md) | System design with constraint capture, reversibility tags, pre-mortem, and phased plan with STOP conditions. Subsystem-tier+ decisions. | `opus` |
+| [**go-elite-engineer**](agents/implement/go-elite-engineer.md) | FAANG-grade implementation: Go, Rust, TypeScript, Svelte, Python, shell, SQL, Dockerfile. Correct idioms, existing style matched, full verify cycle, PR. | `sonnet` |
+| [**tdd-implementer**](agents/implement/tdd-implementer.md) | Plan-task executor: RED → GREEN → REFACTOR → commit. One task at a time. STOPS at commit. | `sonnet` |
+| [**rebase-resolver**](agents/implement/rebase-resolver.md) | Conflict-by-conflict rebase preserving intent from both sides. Per-hunk decisions with intent reasoning. Never wholesale "theirs" or "ours". | `sonnet` |
+| [**refactor-cleaner**](agents/implement/refactor-cleaner.md) | Evidence-based dead code and duplicate removal using code-intelligence tools. Blast-radius check via impact_analysis before every deletion. | `opus` |
+| [**wip-curator**](agents/implement/wip-curator.md) | WIP archaeology: triage dirty checkouts, stash piles, orphaned worktrees. Ship/discard/split decisions. | `sonnet` |
 
 ### Research & Infrastructure
 
 | Agent | Description | Model |
 |---|---|---|
-| **code-research** | Three modes: competitor landscape, solution search (build/borrow/wait), port cost-matrix. Combines web research with codebase analysis. | `opus` |
-| **infrastructure-auditor** | Pre-implementation context primer + workaround audit. Default first step before any meaningful work on an existing repo. CoVe verification in audit mode. | `opus` |
-| **doc-auditor** | Docs-vs-reality drift detection. Evidence-anchored stale claims ("doc says X, code shows Y at file:line since commit Z"). Two modes: audit and update. | `sonnet` |
-| **doc-updater** | Codemap generation and README maintenance from live codebase state. | `opus` |
-| **prompt-master** | 7-stage production prompt engineering pipeline: intake → research → expert panel → multi-level analysis → synthesis → adversarial critique → revision. Returns complete XML prompt. | `opus` |
+| [**code-research**](agents/research/code-research.md) | Three modes: competitor landscape, solution search (build/borrow/wait), port cost-matrix. Combines web research with codebase analysis. | `opus` |
+| [**infrastructure-auditor**](agents/research/infrastructure-auditor.md) | Pre-implementation context primer + workaround audit. Default first step before any meaningful work on an existing repo. CoVe verification in audit mode. | `opus` |
+| [**doc-auditor**](agents/research/doc-auditor.md) | Docs-vs-reality drift detection. Evidence-anchored stale claims ("doc says X, code shows Y at file:line since commit Z"). Two modes: audit and update. | `sonnet` |
+| [**doc-updater**](agents/research/doc-updater.md) | Codemap generation and README maintenance from live codebase state. | `opus` |
+| [**prompt-master**](agents/research/prompt-master.md) | 7-stage production prompt engineering pipeline: intake → research → expert panel → multi-level analysis → synthesis → adversarial critique → revision. Returns complete XML prompt. | `opus` |
 
 ### Frontend
 
 | Agent | Description | Model |
 |---|---|---|
-| **design-orchestrator** | Frontend design router: build/polish/animate → impeccable skill; pre-merge review → design-quality-reviewer; post-deploy → design-empirical-reviewer. | `sonnet` |
-| **e2e-runner** | Playwright E2E specialist: stable journey specs (data-testid + ARIA selectors), flaky test quarantine, artifact collection, suite maintenance. | `opus` |
+| [**design-orchestrator**](agents/frontend/design-orchestrator.md) | Frontend design router: build/polish/animate → impeccable skill; pre-merge review → design-quality-reviewer; post-deploy → design-empirical-reviewer. | `sonnet` |
+| [**e2e-runner**](agents/frontend/e2e-runner.md) | Playwright E2E specialist: stable journey specs (data-testid + ARIA selectors), flaky test quarantine, artifact collection, suite maintenance. | `opus` |
 
 ---
 
