@@ -11,3 +11,14 @@ All agents in `agents/` use YAML frontmatter: `name`, `model`, `description`. Op
 **Model selection**: `opus` for adversarial review, deep diagnosis, and high-stakes planning. `sonnet` for implementation, spec-checking, and research.
 
 Contributions welcome via PR — see CONTRIBUTING.md.
+
+Index of every document: [docs/INDEX.md](docs/INDEX.md).
+
+## Layout and gate
+
+`agents/<group>/<name>.md` holds one subagent per file, `skills/` holds skill
+documents, `.claude-plugin/marketplace.json` registers the plugin, and
+`docs/architecture.md` explains how the agents fit together. There is no build,
+test suite or CI: a change is verified by running the agent on a real task (see
+CONTRIBUTING.md). Keep the agent counts in the README (24 agents, 2 skills) and
+in `marketplace.json` in step with the files.

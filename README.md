@@ -45,7 +45,7 @@ cp -r agents/* ~/.claude/agents/
 |---|---|---|
 | Subagents | 24 | Role-specialized Claude Code agents |
 | Skills | 2 | llm-council, postgres |
-| Plugins | 4 | go-tools, startup-pressure-pro, claude-code-memdb, local-marketplace |
+| Plugins | 1 | krolik-agents (the marketplace entry in `.claude-plugin/marketplace.json`) |
 | Full prompts | 8 | code-quality-reviewer, crypto-security-reviewer, investigator, atomic-engineer, infrastructure-auditor, code-research, prompt-master, architect |
 
 ---
@@ -112,14 +112,10 @@ cp -r agents/* ~/.claude/agents/
 
 ---
 
-## Plugins
+## Plugin
 
-| Plugin | Description |
-|---|---|
-| **go-tools** | go-code MCP integration: semantic search, call traces, impact analysis, dead code, duplicate detection, repo analysis. |
-| **startup-pressure-pro** | Startup idea validation: pressure-test with adversarial critique, market sizing, competitor analysis. |
-| **claude-code-memdb** | Persistent memory across sessions using a local vector DB. Store and retrieve project-specific knowledge. |
-| **local-marketplace** | Browse and install agents from the fleet without internet access. |
+The repository is itself one Claude Code plugin, `krolik-agents`, listed in
+`.claude-plugin/marketplace.json`; installing it provides all agents under `agents/`.
 
 ---
 
@@ -145,7 +141,7 @@ cp -r agents/* ~/.claude/agents/
 
               ── BEFORE ANY PR ──
 
- go-code: prepare_change → review_delta → suggest_reviewers
+ vaelor: prepare_change → review_delta → suggest_reviewers
 ```
 
 ---
@@ -158,10 +154,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit new agents.
 
 These agents build and operate a wider set of open-source AI-infrastructure projects:
 
-- [go-code](https://krolik.tools) — code intelligence MCP for AI agents: semantic search, call graphs, dataflow, PR review across 16 languages
+- [vaelor](https://krolik.tools) — code intelligence MCP for AI agents: semantic search, call graphs, dataflow, PR review across 16 languages
 - [MemDB](https://memdb.ai) — self-hosted long-term memory database for AI agents
 - [dozor](https://github.com/anatolykoptev/dozor) — AI-first server monitoring via MCP
 - [go-mcpserver](https://github.com/anatolykoptev/go-mcpserver) — bootstrap library for Go MCP servers
+
+## Status
+
+Active; no tagged releases, history in [CHANGELOG.md](CHANGELOG.md). Documentation index: [docs/INDEX.md](docs/INDEX.md).
 
 ## License
 
