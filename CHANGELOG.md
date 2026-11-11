@@ -6,6 +6,10 @@ releases; the history is listed by date.
 
 ## [Unreleased]
 
+### Changed
+
+- Licence changed from MIT to Apache-2.0 from this version on.
+
 ### Added
 
 - Repository documents: CHANGELOG, CODE_OF_CONDUCT, SECURITY, issue and pull

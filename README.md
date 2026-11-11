@@ -1,6 +1,6 @@
 # krolik-agents — Production Claude Code subagents
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/anatolykoptev/krolik-agents)](https://github.com/anatolykoptev/krolik-agents/commits/main)
 ![Subagents](https://img.shields.io/badge/subagents-24-green)
 ![Skills](https://img.shields.io/badge/skills-2-purple)
@@ -165,4 +165,4 @@ Active; no tagged releases, history in [CHANGELOG.md](CHANGELOG.md). Documentati
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+Apache-2.0 — see [LICENSE](LICENSE)
