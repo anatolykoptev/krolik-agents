@@ -8,7 +8,7 @@
 
 > A fleet of 24 role-specialized Claude Code subagents — reviewers, debuggers, implementers, infra auditors — built and battle-tested across a multi-repo production stack.
 
-Part of the [Krolik](https://krolik.tools) fleet of open-source AI-infrastructure projects.
+Part of a fleet of open-source AI-infrastructure projects.
 
 ---
 
@@ -154,7 +154,7 @@ cp -r agents/* ~/.claude/agents/
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit new agents.
 
-## Part of the Krolik fleet
+## Part of the fleet
 
 These agents build and operate a wider set of open-source AI-infrastructure projects:
 
